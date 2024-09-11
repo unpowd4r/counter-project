@@ -72,6 +72,11 @@
 	border-radius: 15px;
 
 	cursor: pointer;
+
+	&:active {
+		background-color: rgb(87, 87, 87);
+		color: rgb(0, 204, 255);
+	}
 }
 
 .disabled {
