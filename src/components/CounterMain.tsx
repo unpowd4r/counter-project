@@ -17,8 +17,8 @@ export const CounterMain = () => {
 		setCount(0)
 	}
 
-	const disabledInc = count === MAX_VALUE ? true : false
-	const disabledReset = count === MIN_VALUE ? true : false
+	const disabledInc = count === MAX_VALUE
+	const disabledReset = count === MIN_VALUE
 
 	const buttonData = [
 		{
