@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v1 } from 'uuid'
 import { Button } from './Button'
 
 const MAX_VALUE = 5
@@ -19,22 +20,35 @@ export const CounterMain = () => {
 	const disabledInc = count === MAX_VALUE ? true : false
 	const disabledReset = count === MIN_VALUE ? true : false
 
+	const buttonData = [
+		{
+			id: v1(),
+			title: 'inc',
+			onClickHandler: incrementCounter,
+			activeButton: disabledInc,
+		},
+		{
+			id: v1(),
+			title: 'reset',
+			onClickHandler: resetCounter,
+			activeButton: disabledReset,
+		},
+	]
+
 	return (
 		<div className='counter__window'>
 			<div className='counter__background'>
 				<h1 className={count === MAX_VALUE ? 'redCounter' : ''}>{count}</h1>
 			</div>
 			<div className='buttons__items'>
-				<Button
-					activeButton={disabledInc}
-					title={'inc'}
-					onClick={incrementCounter}
-				/>
-				<Button
-					activeButton={disabledReset}
-					title={'reset'}
-					onClick={resetCounter}
-				/>
+				{buttonData.map(t => (
+					<Button
+						key={t.id}
+						title={t.title}
+						onClick={t.onClickHandler}
+						activeButton={t.activeButton}
+					/>
+				))}
 			</div>
 		</div>
 	)
