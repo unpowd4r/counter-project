@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { Button } from './Button'
 
+const MAX_VALUE = 5
+const MIN_VALUE = 0
+
 export const CounterMain = () => {
 	let [count, setCount] = useState(0)
 
 	const incrementCounter = () => {
-		if (count < 5) {
+		if (count < MAX_VALUE) {
 			setCount(count + 1)
 		}
 	}
@@ -13,13 +16,13 @@ export const CounterMain = () => {
 		setCount(0)
 	}
 
-	const disabledInc = count === 5
-	const disabledReset = count === 0
+	const disabledInc = count === MAX_VALUE ? true : false
+	const disabledReset = count === MIN_VALUE ? true : false
 
 	return (
 		<div className='counter__window'>
 			<div className='counter__background'>
-				<h1 className={count === 5 ? 'redCounter' : ''}>{count}</h1>
+				<h1 className={count === MAX_VALUE ? 'redCounter' : ''}>{count}</h1>
 			</div>
 			<div className='buttons__items'>
 				<Button

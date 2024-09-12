@@ -84,9 +84,9 @@
 	height: 60%;
 	width: 40%;
 
-	font-weight: 700;
-	font-size: 40px;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: 700px;
+	font-size: 40px;
 
 	opacity: 0.5;
 
@@ -96,5 +96,5 @@
 }
 
 .redCounter {
-	color: rgb(136, 1, 1);
+	color: rgb(170, 2, 2);
 }
